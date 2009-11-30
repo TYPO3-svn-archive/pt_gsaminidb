@@ -1,0 +1,57 @@
+********************************************************************************
+DevDoc.txt: Development notes for EXT pt_gsaminidb
+Author: Rainer Kuhn
+
+Legend:
+FIX: fixed a bug
+CHG: changed items/features
+ADD: added feature
+RMV: removed item
+RFT: refactoring / code cleanup
+********************************************************************************
+
+
+
+ToDo: As of 27.11.2009
+====
+
+
+
+
+********************************************************************************
+CHANGELOG
+********************************************************************************
+
+
+v1.0.0dev
+---------
++ (rk) CHG: GSAMINIDB.sql and tx_ptgsaminidb_tables.sql: changed data type of ARTIKEL.ZUSTEXT1 and ARTIKEL.ZUSTEXT2 from "longblob" to "longtext" 
+       (Background: If you move MySQL databases and let MySQL automatically convert the charset, MySQL deactivates it's internal charset conversion for
+       for 'blob' fields (and for the blob sub-types). If these fields are set to data type 'text' (or of the text sub-types), the automatic charset conversion works fine.)
+       
+
+
+
+
+
+
+
+********************************************************************************
+NOTES
+********************************************************************************
+
+1) IMPORTANT: always remember when changing/extending SQL code within this ext.:
+   ----------------------------------------------------------------------------
+   - do all changes in *BOTH* SQL script files!!
+   - adapt corresponding entries in tables "SYNEWNUMBER" and/or "NUMMERN"
+     where applicable
+   - use backticks for field and tables names since the ERP database uses
+     reserved SQL words as table names
+
+2) Automatic installation of the current GSA database in TYPO3's extension 
+   manager is not possible since we do not use TYPO3-style tables, no TCA etc.;
+   a semi-automatic installation would be possible using class.ext_update.php
+   script, but this would cost to much efforts (it's not worth it since the
+   admin is enabled the SQL dump into the MySQL database using the provided 
+   scripts).
+
