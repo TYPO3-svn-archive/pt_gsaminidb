@@ -12,7 +12,7 @@ RFT: refactoring / code cleanup
 
 
 
-ToDo: As of 27.11.2009
+ToDo: As of 30.11.2009
 ====
 
 
@@ -22,9 +22,15 @@ ToDo: As of 27.11.2009
 CHANGELOG
 ********************************************************************************
 
-
-v1.0.0dev
+v1.0.1dev:
 ---------
++ (rk) CHG: "initialized" development version 1.0.1dev (v1.0.0 has been tagged in SVN and uploaded to TER before)
+
+
+
+
+v1.0.0:
+------
 + (rk) CHG: GSAMINIDB.sql and tx_ptgsaminidb_tables.sql: changed data type of ARTIKEL.ZUSTEXT1 and ARTIKEL.ZUSTEXT2 from "longblob" to "longtext" 
        (Background: If you move MySQL databases and let MySQL automatically convert the charset, MySQL deactivates it's internal charset conversion for
        for 'blob' fields (and for the blob sub-types). If these fields are set to data type 'text' (or of the text sub-types), the automatic charset conversion works fine.)
